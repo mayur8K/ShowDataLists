@@ -38,7 +38,6 @@
 {
     _cellImage = [[UIImageView alloc] init];
     _cellImage.translatesAutoresizingMaskIntoConstraints = NO;
-    _cellImage.backgroundColor = [UIColor greenColor];
     [self addSubview:_cellImage];
     
     _titleLabel = [[UILabel alloc] init];

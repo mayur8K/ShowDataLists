@@ -29,7 +29,11 @@
 
 - (void)sendDataItems:(NSMutableDictionary *)dictionary
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"LOADLIST_NOTIFICATION" object:dictionary];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LOADLIST_NOTIFICATION" object:dictionary];
+    });
+    
 }
 
 @end

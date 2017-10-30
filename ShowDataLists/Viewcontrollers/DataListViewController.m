@@ -9,13 +9,14 @@
 #import "DataListViewController.h"
 #import "DataCell.h"
 #import "DataManager.h"
+#import "DataModel.h"
 
 @interface DataListViewController ()
 {
 }
 @property(strong, nonatomic) NSMutableArray *datalists;
 @property(strong, nonatomic) DataManager *managerObj;
-@property(strong, nonatomic) NSString *title;
+@property(strong, nonatomic) NSString *navTitle;
 
 @end
 
@@ -68,6 +69,12 @@
     [_managerObj getServerData];
 }
 
+-(UIImage *)getCellImage:(NSString *)urlstring
+{
+    UIImage * image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlstring]]];
+    return image;
+    
+}
 // MARK: TableView DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -76,7 +83,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return _datalists.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -86,8 +93,34 @@
     if (cell == nil) {
         cell = [[DataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell.descriptionLabel.text = @"Test String Test String Test String Test String Test String Test String Test String Test String ";
-    cell.titleLabel.text = @"hello world";
+    
+    if(([(DataModel *)[self.datalists objectAtIndex:indexPath.row] descriptionTitle]) != (id)[NSNull null])
+    {
+        cell.descriptionLabel.text = [(DataModel *)[self.datalists objectAtIndex:indexPath.row] descriptionTitle];
+    }
+    
+    if([(DataModel *)[self.datalists objectAtIndex:indexPath.row] title] != (id)[NSNull null])
+    {
+        cell.titleLabel.text = [(DataModel *)[self.datalists objectAtIndex:indexPath.row] title];
+    }
+    
+    if ([(DataModel *)[self.datalists objectAtIndex:indexPath.row] imageUrl] !=  (id)[NSNull null]) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            // retrive image on global queue
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // assign cell image on main thread
+                cell.cellImage.image = [self getCellImage:[(DataModel *)[self.datalists objectAtIndex:indexPath.row] imageUrl]];
+                
+            });
+        });
+    }
+    else {
+        
+        cell.cellImage.image = [UIImage imageNamed:@"defaultIcon"];
+    }
+    
     return cell;
 }
 
@@ -111,5 +144,12 @@
 - (void)receiveDataObjects:(NSNotification *) notification
 {
     NSMutableDictionary *dict = (NSMutableDictionary *)notification.object;
+    if(dict.count > 0){
+        
+        _navTitle = [dict objectForKey:@"title"];
+        self.datalists = [dict objectForKey:@"rows"];
+        self.navigationItem.title = _navTitle;
+        [self.tableView reloadData];
+    }
 }
 @end
