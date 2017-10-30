@@ -29,6 +29,7 @@
     NSMutableArray *rows = [dataList valueForKey:@"rows"];
     NSMutableArray *dataObjects = [NSMutableArray array];
     NSMutableDictionary *dataItems = [NSMutableDictionary dictionary];
+   
     for(int i =0; i< rows.count; i++)
     {
         DataModel *model = [[DataModel alloc] init];

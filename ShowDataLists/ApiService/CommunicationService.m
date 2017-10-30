@@ -11,7 +11,6 @@
 
 @interface CommunicationService()
 {
-    
 }
 @end
 
@@ -19,21 +18,19 @@
 
 - (void)loadServerDataWithUrl:(NSString *)urlString
 {
-    NSMutableString *url = [[NSMutableString alloc] initWithString:urlString]; // imac development
-
-    NSURL *serverURL = [NSURL URLWithString:url];
+    NSURL *serverURL = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:serverURL];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-                                      {
-                                          JsonParser *parser = [[JsonParser alloc] init];
-                                          NSMutableDictionary *dataItems = [parser parseJsonDataWithData:data andError:error];
-                                          if (dataItems.count > 0)
-                                          {
-                                              [self.delegate sendDataItems:dataItems];
-                                          }
-                                      }];
+      {
+          JsonParser *parser = [[JsonParser alloc] init];
+          NSMutableDictionary *dataItems = [parser parseJsonDataWithData:data andError:error];
+          if (dataItems.count > 0)
+          {
+              [self.delegate sendDataItems:dataItems];
+          }
+      }];
     [dataTask resume];
 }
 

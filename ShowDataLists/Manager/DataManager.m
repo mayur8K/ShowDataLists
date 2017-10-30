@@ -8,6 +8,7 @@
 
 #import "DataManager.h"
 #import "CommunicationService.h"
+
 #define urlstring @"https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
 
 @interface DataManager()<dataManagerDelegate>
@@ -33,7 +34,6 @@
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LOADLIST_NOTIFICATION" object:dictionary];
     });
-    
 }
 
 @end

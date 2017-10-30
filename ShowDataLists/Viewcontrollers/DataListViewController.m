@@ -84,12 +84,6 @@
     [refreshControl endRefreshing];
 }
 
--(UIImage *)getCellImage:(NSString *)urlstring
-{
-    UIImage * image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlstring]]];
-    return image;
-    
-}
 // MARK: TableView DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -121,19 +115,32 @@
     
     if ([(DataModel *)[self.datalists objectAtIndex:indexPath.row] imageUrl] !=  (id)[NSNull null]) {
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            // retrive image on global queue
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                // assign cell image on main thread
-                cell.cellImage.image = [self getCellImage:[(DataModel *)[self.datalists objectAtIndex:indexPath.row] imageUrl]];
-                
-            });
-        });
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//            // retrive image on global queue
+//            UIImage * image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[(DataModel *)[self.datalists objectAtIndex:indexPath.row] imageUrl]]]];
+//
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                // assign cell image on main thread
+//                cell.cellImage.image = image;
+//
+//            });
+//        });
+        NSURL *url = [NSURL URLWithString:[(DataModel *)[self.datalists objectAtIndex:indexPath.row] imageUrl]];
+        NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (data) {
+                UIImage *image = [UIImage imageWithData:data];
+                if (image) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        cell.cellImage.image = image;
+                    });
+                }
+            }
+        }];
+        [task resume];
     }
     else {
         
-        //cell.cellImage.image = [UIImage imageNamed:@"defaultIcon"];
+        cell.cellImage.image = [UIImage imageNamed:@"defaultIcon"];
     }
     
     return cell;

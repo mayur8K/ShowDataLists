@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface DataManager : NSObject
 {
-    
 }
 - (void)getServerData;
 @end
