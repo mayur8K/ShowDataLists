@@ -8,11 +8,14 @@
 
 #import "DataListViewController.h"
 #import "DataCell.h"
+#import "DataManager.h"
 
 @interface DataListViewController ()
 {
 }
 @property(strong, nonatomic) NSMutableArray *datalists;
+@property(strong, nonatomic) DataManager *managerObj;
+@property(strong, nonatomic) NSString *title;
 
 @end
 
@@ -29,7 +32,6 @@
 
 - (void)didReceiveMemoryWarning
 {
-    
 }
 
 // MARK: View LifeCycle
@@ -37,15 +39,20 @@
 {
     [super viewDidLoad];
     [self setupTableView];
+    [self getServerData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveDataObjects:)
+                                                 name:@"LOADLIST_NOTIFICATION"
+                                               object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LOADLIST_NOTIFICATION" object:nil];
 }
 
 // MARK: Private Methods
@@ -53,6 +60,12 @@
 {
     self.tableView.estimatedRowHeight = 100;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
+
+- (void)getServerData
+{
+    _managerObj = [[DataManager alloc] init];
+    [_managerObj getServerData];
 }
 
 // MARK: TableView DataSource
@@ -74,7 +87,6 @@
         cell = [[DataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     cell.descriptionLabel.text = @"Test String Test String Test String Test String Test String Test String Test String Test String ";
-    cell.descriptionLabel.text =
     cell.titleLabel.text = @"hello world";
     return cell;
 }
@@ -93,5 +105,11 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     return UITableViewAutomaticDimension;
+}
+//MARK: Notification Handlers
+
+- (void)receiveDataObjects:(NSNotification *) notification
+{
+    NSMutableDictionary *dict = (NSMutableDictionary *)notification.object;
 }
 @end

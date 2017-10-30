@@ -20,6 +20,18 @@
 		6AA568D71FA7269300B2BBEF /* DataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568D61FA7269300B2BBEF /* DataCell.m */; };
 		6AA568D81FA7269300B2BBEF /* DataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568D61FA7269300B2BBEF /* DataCell.m */; };
 		6AA568D91FA7269300B2BBEF /* DataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568D61FA7269300B2BBEF /* DataCell.m */; };
+		6AA568E01FA72FB700B2BBEF /* CommunicationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568DF1FA72FB700B2BBEF /* CommunicationService.m */; };
+		6AA568E11FA72FB700B2BBEF /* CommunicationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568DF1FA72FB700B2BBEF /* CommunicationService.m */; };
+		6AA568E21FA72FB700B2BBEF /* CommunicationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568DF1FA72FB700B2BBEF /* CommunicationService.m */; };
+		6AA568E51FA7364C00B2BBEF /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568E41FA7364C00B2BBEF /* DataModel.m */; };
+		6AA568E61FA7364C00B2BBEF /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568E41FA7364C00B2BBEF /* DataModel.m */; };
+		6AA568E71FA7364C00B2BBEF /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568E41FA7364C00B2BBEF /* DataModel.m */; };
+		6AA568EA1FA740F900B2BBEF /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568E91FA740F900B2BBEF /* JsonParser.m */; };
+		6AA568EB1FA740F900B2BBEF /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568E91FA740F900B2BBEF /* JsonParser.m */; };
+		6AA568EC1FA740F900B2BBEF /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568E91FA740F900B2BBEF /* JsonParser.m */; };
+		6AA568EF1FA7436700B2BBEF /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568EE1FA7436700B2BBEF /* DataManager.m */; };
+		6AA568F01FA7436700B2BBEF /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568EE1FA7436700B2BBEF /* DataManager.m */; };
+		6AA568F11FA7436700B2BBEF /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568EE1FA7436700B2BBEF /* DataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +70,14 @@
 		6AA568D11FA7267300B2BBEF /* DataListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataListViewController.m; sourceTree = "<group>"; };
 		6AA568D51FA7269300B2BBEF /* DataCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataCell.h; sourceTree = "<group>"; };
 		6AA568D61FA7269300B2BBEF /* DataCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataCell.m; sourceTree = "<group>"; };
+		6AA568DE1FA72FB700B2BBEF /* CommunicationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunicationService.h; sourceTree = "<group>"; };
+		6AA568DF1FA72FB700B2BBEF /* CommunicationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunicationService.m; sourceTree = "<group>"; };
+		6AA568E31FA7364C00B2BBEF /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		6AA568E41FA7364C00B2BBEF /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		6AA568E81FA740F900B2BBEF /* JsonParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
+		6AA568E91FA740F900B2BBEF /* JsonParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonParser.m; sourceTree = "<group>"; };
+		6AA568ED1FA7436700B2BBEF /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		6AA568EE1FA7436700B2BBEF /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +184,8 @@
 		6AA568DA1FA72D8800B2BBEF /* ApiService */ = {
 			isa = PBXGroup;
 			children = (
+				6AA568DE1FA72FB700B2BBEF /* CommunicationService.h */,
+				6AA568DF1FA72FB700B2BBEF /* CommunicationService.m */,
 			);
 			path = ApiService;
 			sourceTree = "<group>";
@@ -171,6 +193,8 @@
 		6AA568DB1FA72D8800B2BBEF /* ModelClasses */ = {
 			isa = PBXGroup;
 			children = (
+				6AA568E31FA7364C00B2BBEF /* DataModel.h */,
+				6AA568E41FA7364C00B2BBEF /* DataModel.m */,
 			);
 			path = ModelClasses;
 			sourceTree = "<group>";
@@ -178,6 +202,8 @@
 		6AA568DC1FA72D8900B2BBEF /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				6AA568ED1FA7436700B2BBEF /* DataManager.h */,
+				6AA568EE1FA7436700B2BBEF /* DataManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -185,6 +211,8 @@
 		6AA568DD1FA72D9100B2BBEF /* Parser */ = {
 			isa = PBXGroup;
 			children = (
+				6AA568E81FA740F900B2BBEF /* JsonParser.h */,
+				6AA568E91FA740F900B2BBEF /* JsonParser.m */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -323,9 +351,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AA568D21FA7267300B2BBEF /* DataListViewController.m in Sources */,
+				6AA568E01FA72FB700B2BBEF /* CommunicationService.m in Sources */,
 				6AA568AC1FA7243D00B2BBEF /* main.m in Sources */,
 				6AA5689E1FA7243D00B2BBEF /* AppDelegate.m in Sources */,
 				6AA568D71FA7269300B2BBEF /* DataCell.m in Sources */,
+				6AA568EF1FA7436700B2BBEF /* DataManager.m in Sources */,
+				6AA568E51FA7364C00B2BBEF /* DataModel.m in Sources */,
+				6AA568EA1FA740F900B2BBEF /* JsonParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +365,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AA568EB1FA740F900B2BBEF /* JsonParser.m in Sources */,
+				6AA568E11FA72FB700B2BBEF /* CommunicationService.m in Sources */,
+				6AA568F01FA7436700B2BBEF /* DataManager.m in Sources */,
+				6AA568E61FA7364C00B2BBEF /* DataModel.m in Sources */,
 				6AA568D81FA7269300B2BBEF /* DataCell.m in Sources */,
 				6AA568D31FA7267300B2BBEF /* DataListViewController.m in Sources */,
 				6AA568B61FA7243D00B2BBEF /* ShowDataListsTests.m in Sources */,
@@ -343,6 +379,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AA568EC1FA740F900B2BBEF /* JsonParser.m in Sources */,
+				6AA568E21FA72FB700B2BBEF /* CommunicationService.m in Sources */,
+				6AA568F11FA7436700B2BBEF /* DataManager.m in Sources */,
+				6AA568E71FA7364C00B2BBEF /* DataModel.m in Sources */,
 				6AA568D91FA7269300B2BBEF /* DataCell.m in Sources */,
 				6AA568D41FA7267300B2BBEF /* DataListViewController.m in Sources */,
 				6AA568C11FA7243D00B2BBEF /* ShowDataListsUITests.m in Sources */,
