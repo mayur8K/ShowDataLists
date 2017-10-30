@@ -13,6 +13,7 @@
 
 @interface DataListViewController ()
 {
+    UIRefreshControl *refreshControl;
 }
 @property(strong, nonatomic) NSMutableArray *datalists;
 @property(strong, nonatomic) DataManager *managerObj;
@@ -61,12 +62,25 @@
 {
     self.tableView.estimatedRowHeight = 100;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+  
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.backgroundColor = [UIColor clearColor];
+    refreshControl.tintColor = [UIColor blackColor];
+    [refreshControl addTarget:self
+                       action:@selector(refreshViews)
+             forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
 }
 
 - (void)getServerData
 {
     _managerObj = [[DataManager alloc] init];
     [_managerObj getServerData];
+}
+
+- (void)refreshViews{
+    [self.tableView reloadData];
+    [refreshControl endRefreshing];
 }
 
 -(UIImage *)getCellImage:(NSString *)urlstring
