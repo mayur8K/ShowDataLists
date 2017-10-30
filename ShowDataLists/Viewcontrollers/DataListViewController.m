@@ -14,6 +14,7 @@
 @interface DataListViewController ()
 {
     UIRefreshControl *refreshControl;
+    DataCell * cell;
 }
 @property(strong, nonatomic) NSMutableArray *datalists;
 @property(strong, nonatomic) DataManager *managerObj;
@@ -60,7 +61,7 @@
 // MARK: Private Methods
 - (void)setupTableView
 {
-    self.tableView.estimatedRowHeight = 100;
+    self.tableView.estimatedRowHeight = 300;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
   
     refreshControl = [[UIRefreshControl alloc] init];
@@ -103,7 +104,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIdentifier = @"DataCell";
-    DataCell * cell = (DataCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell = (DataCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[DataCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
@@ -132,7 +133,7 @@
     }
     else {
         
-        cell.cellImage.image = [UIImage imageNamed:@"defaultIcon"];
+        //cell.cellImage.image = [UIImage imageNamed:@"defaultIcon"];
     }
     
     return cell;
@@ -151,8 +152,39 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return UITableViewAutomaticDimension;
+    int totalHeight = 0;
+    if (([(DataModel *)[self.datalists objectAtIndex:indexPath.row] descriptionTitle]) != (id)[NSNull null])
+    {
+        totalHeight += [self calculateHeightWith:[(DataModel *)[self.datalists objectAtIndex:indexPath.row] descriptionTitle]];
+        totalHeight+=5;
+    }
+    if (([(DataModel *)[self.datalists objectAtIndex:indexPath.row] title]) != (id)[NSNull null])
+    {
+        totalHeight += [self calculateHeightWith:[(DataModel *)[self.datalists objectAtIndex:indexPath.row] title]];
+        totalHeight+=5;
+    }
+    
+    return totalHeight;
+    
 }
+
+- (CGFloat)calculateHeightWith:(NSString *)textstr
+{
+    NSString *text = textstr;
+    CGFloat width = cell.frame.size.width;
+    UIFont *font = [UIFont fontWithName:@"Arial" size:12];
+    NSAttributedString *attributedText =
+    [[NSAttributedString alloc] initWithString:text
+                                    attributes:@{NSFontAttributeName: font}];
+    CGRect rect = [attributedText boundingRectWithSize:(CGSize){width, CGFLOAT_MAX}
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                               context:nil];
+    CGSize size = rect.size;
+    CGFloat height = ceilf(size.height);
+    
+    return height;
+}
+
 //MARK: Notification Handlers
 
 - (void)receiveDataObjects:(NSNotification *) notification

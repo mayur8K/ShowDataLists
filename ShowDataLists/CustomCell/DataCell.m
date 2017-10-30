@@ -44,7 +44,7 @@
     _titleLabel.numberOfLines = 0;
     _titleLabel.translatesAutoresizingMaskIntoConstraints = false;
     _titleLabel.textColor = [UIColor blackColor];
-    _titleLabel.font = [UIFont fontWithName:@"Arial" size:15.0f];
+    _titleLabel.font = [UIFont fontWithName:@"Arial" size:12.0f];
     [self addSubview:_titleLabel];
     
     _descriptionLabel = [[UILabel alloc] init];
@@ -56,24 +56,26 @@
     
     NSDictionary *views = NSDictionaryOfVariableBindings(_cellImage, _titleLabel);
     
-    NSArray *horizontalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[_cellImage(50)]|" options:0 metrics:nil views:views];
+    NSArray *horizontalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_cellImage(50)]|" options:0 metrics:nil views:views];
     
-    NSArray *verticalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[_cellImage(50)]-(5)-|" options:0 metrics:nil views:views];
+    NSArray *verticalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_cellImage(50)]|" options:0 metrics:nil views:views];
     
     [self addConstraints:horizontalConstraints];
     [self addConstraints:verticalConstraints];
     
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_cellImage attribute:NSLayoutAttributeTop multiplier:1.0 constant:5]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_cellImage attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
     
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_cellImage attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:5]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:_cellImage attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0]];
     
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:5]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0]];
     
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_titleLabel attribute:NSLayoutAttributeBaseline multiplier:1.0 constant:5]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_titleLabel attribute:NSLayoutAttributeBaseline multiplier:1.0 constant:0]];
     
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_cellImage attribute:NSLayoutAttributeRight multiplier:1.0 constant:5]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_cellImage attribute:NSLayoutAttributeRight multiplier:1.0 constant:0]];
     
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:5]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0]];
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_descriptionLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeBaseline multiplier:1.0 constant:2]];
     
 }
 
