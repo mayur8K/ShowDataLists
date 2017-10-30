@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DataListViewController.h
 //  ShowDataLists
 //
 //  Created by iOS Dev on 10/30/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface DataListViewController : UITableViewController
 
 @end
-

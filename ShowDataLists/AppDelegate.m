@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DataListViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // Override point for customization after application launch.
+    
+    DataListViewController *listVC = [[DataListViewController alloc] init];
+    UINavigationController *dataNavigation = [[UINavigationController alloc] initWithRootViewController:listVC];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
+    self.window.rootViewController = dataNavigation;
     return YES;
 }
 

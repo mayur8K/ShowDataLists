@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		6AA5689E1FA7243D00B2BBEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5689D1FA7243D00B2BBEF /* AppDelegate.m */; };
-		6AA568A11FA7243D00B2BBEF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568A01FA7243D00B2BBEF /* ViewController.m */; };
 		6AA568A41FA7243D00B2BBEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA568A21FA7243D00B2BBEF /* Main.storyboard */; };
 		6AA568A61FA7243D00B2BBEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AA568A51FA7243D00B2BBEF /* Assets.xcassets */; };
 		6AA568A91FA7243D00B2BBEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA568A71FA7243D00B2BBEF /* LaunchScreen.storyboard */; };
 		6AA568AC1FA7243D00B2BBEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568AB1FA7243D00B2BBEF /* main.m */; };
 		6AA568B61FA7243D00B2BBEF /* ShowDataListsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568B51FA7243D00B2BBEF /* ShowDataListsTests.m */; };
 		6AA568C11FA7243D00B2BBEF /* ShowDataListsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568C01FA7243D00B2BBEF /* ShowDataListsUITests.m */; };
+		6AA568D21FA7267300B2BBEF /* DataListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568D11FA7267300B2BBEF /* DataListViewController.m */; };
+		6AA568D31FA7267300B2BBEF /* DataListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568D11FA7267300B2BBEF /* DataListViewController.m */; };
+		6AA568D41FA7267300B2BBEF /* DataListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568D11FA7267300B2BBEF /* DataListViewController.m */; };
+		6AA568D71FA7269300B2BBEF /* DataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568D61FA7269300B2BBEF /* DataCell.m */; };
+		6AA568D81FA7269300B2BBEF /* DataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568D61FA7269300B2BBEF /* DataCell.m */; };
+		6AA568D91FA7269300B2BBEF /* DataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA568D61FA7269300B2BBEF /* DataCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +43,6 @@
 		6AA568991FA7243D00B2BBEF /* ShowDataLists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowDataLists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AA5689C1FA7243D00B2BBEF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6AA5689D1FA7243D00B2BBEF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6AA5689F1FA7243D00B2BBEF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6AA568A01FA7243D00B2BBEF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6AA568A31FA7243D00B2BBEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6AA568A51FA7243D00B2BBEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AA568A81FA7243D00B2BBEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,10 @@
 		6AA568BC1FA7243D00B2BBEF /* ShowDataListsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowDataListsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AA568C01FA7243D00B2BBEF /* ShowDataListsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowDataListsUITests.m; sourceTree = "<group>"; };
 		6AA568C21FA7243D00B2BBEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AA568D01FA7267300B2BBEF /* DataListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataListViewController.h; sourceTree = "<group>"; };
+		6AA568D11FA7267300B2BBEF /* DataListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataListViewController.m; sourceTree = "<group>"; };
+		6AA568D51FA7269300B2BBEF /* DataCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataCell.h; sourceTree = "<group>"; };
+		6AA568D61FA7269300B2BBEF /* DataCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +108,14 @@
 		6AA5689B1FA7243D00B2BBEF /* ShowDataLists */ = {
 			isa = PBXGroup;
 			children = (
+				6AA568DD1FA72D9100B2BBEF /* Parser */,
+				6AA568DA1FA72D8800B2BBEF /* ApiService */,
+				6AA568DC1FA72D8900B2BBEF /* Manager */,
+				6AA568DB1FA72D8800B2BBEF /* ModelClasses */,
+				6AA568CE1FA7264A00B2BBEF /* CustomCell */,
+				6AA568CF1FA7264A00B2BBEF /* Viewcontrollers */,
 				6AA5689C1FA7243D00B2BBEF /* AppDelegate.h */,
 				6AA5689D1FA7243D00B2BBEF /* AppDelegate.m */,
-				6AA5689F1FA7243D00B2BBEF /* ViewController.h */,
-				6AA568A01FA7243D00B2BBEF /* ViewController.m */,
 				6AA568A21FA7243D00B2BBEF /* Main.storyboard */,
 				6AA568A51FA7243D00B2BBEF /* Assets.xcassets */,
 				6AA568A71FA7243D00B2BBEF /* LaunchScreen.storyboard */,
@@ -130,6 +141,52 @@
 				6AA568C21FA7243D00B2BBEF /* Info.plist */,
 			);
 			path = ShowDataListsUITests;
+			sourceTree = "<group>";
+		};
+		6AA568CE1FA7264A00B2BBEF /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				6AA568D51FA7269300B2BBEF /* DataCell.h */,
+				6AA568D61FA7269300B2BBEF /* DataCell.m */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		6AA568CF1FA7264A00B2BBEF /* Viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				6AA568D01FA7267300B2BBEF /* DataListViewController.h */,
+				6AA568D11FA7267300B2BBEF /* DataListViewController.m */,
+			);
+			path = Viewcontrollers;
+			sourceTree = "<group>";
+		};
+		6AA568DA1FA72D8800B2BBEF /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
+		6AA568DB1FA72D8800B2BBEF /* ModelClasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelClasses;
+			sourceTree = "<group>";
+		};
+		6AA568DC1FA72D8900B2BBEF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		6AA568DD1FA72D9100B2BBEF /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +322,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AA568A11FA7243D00B2BBEF /* ViewController.m in Sources */,
+				6AA568D21FA7267300B2BBEF /* DataListViewController.m in Sources */,
 				6AA568AC1FA7243D00B2BBEF /* main.m in Sources */,
 				6AA5689E1FA7243D00B2BBEF /* AppDelegate.m in Sources */,
+				6AA568D71FA7269300B2BBEF /* DataCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +333,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AA568D81FA7269300B2BBEF /* DataCell.m in Sources */,
+				6AA568D31FA7267300B2BBEF /* DataListViewController.m in Sources */,
 				6AA568B61FA7243D00B2BBEF /* ShowDataListsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +343,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AA568D91FA7269300B2BBEF /* DataCell.m in Sources */,
+				6AA568D41FA7267300B2BBEF /* DataListViewController.m in Sources */,
 				6AA568C11FA7243D00B2BBEF /* ShowDataListsUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
