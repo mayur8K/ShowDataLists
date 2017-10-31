@@ -20,6 +20,7 @@
 @property(strong, nonatomic) DataManager *managerObj;
 @property(strong, nonatomic) NSString *navTitle;
 
+
 @end
 
 @implementation DataListViewController

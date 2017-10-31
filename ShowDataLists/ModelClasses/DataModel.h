@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface DataModel : NSObject
-{
-}
+
 @property(strong, nonatomic) NSString *imageUrl;
 @property(strong, nonatomic) NSString *title;
 @property(strong, nonatomic) NSString *descriptionTitle;

@@ -12,20 +12,19 @@
 #define urlstring @"https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
 
 @interface DataManager()<dataManagerDelegate>
-{
-    CommunicationService *serviceObj;
-}
+
 @property(strong, nonatomic)NSMutableDictionary *dataItems;
 @property(strong, nonatomic)NSString *title;
+@property(strong, nonatomic)CommunicationService *serviceObj;
 @end
 
 @implementation DataManager
 
 - (void)getServerData
 {
-    serviceObj = [[CommunicationService alloc] init];
-    serviceObj.delegate = self;
-    [serviceObj loadServerDataWithUrl:urlstring];
+    _serviceObj = [[CommunicationService alloc] init];
+    _serviceObj.delegate = self;
+    [_serviceObj loadServerDataWithUrl:urlstring];
 }
 
 - (void)sendDataItems:(NSMutableDictionary *)dictionary

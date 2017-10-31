@@ -9,10 +9,8 @@
 #import "DataCell.h"
 
 @interface DataCell()
-{
-}
-@end
 
+@end
 @implementation DataCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

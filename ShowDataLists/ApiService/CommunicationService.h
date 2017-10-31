@@ -13,9 +13,7 @@
 @end
 
 @interface CommunicationService : NSObject
-{
-    
-}
+
 @property(weak, nonatomic)id<dataManagerDelegate> delegate;
 - (void)loadServerDataWithUrl:(NSString *)urlString;
 @end

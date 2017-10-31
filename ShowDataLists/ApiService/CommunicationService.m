@@ -10,8 +10,7 @@
 #import "JsonParser.h"
 
 @interface CommunicationService()
-{
-}
+
 @end
 
 @implementation CommunicationService

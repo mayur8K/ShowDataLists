@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface JsonParser : NSObject
-{
-    
-}
+
 -(NSMutableDictionary *)parseJsonDataWithData:(NSData *)jsonData andError:(NSError *)error;
 @end
