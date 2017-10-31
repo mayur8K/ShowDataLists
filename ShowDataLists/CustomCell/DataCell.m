@@ -55,9 +55,9 @@
     
     NSDictionary *views = NSDictionaryOfVariableBindings(_cellImage, _titleLabel);
     
-    NSArray *horizontalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(5)-[_cellImage(70)]|" options:0 metrics:nil views:views];
+    NSArray *horizontalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(5)-[_cellImage(40)]|" options:0 metrics:nil views:views];
     
-    NSArray *verticalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(5)-[_cellImage(70)]-(5)-|" options:0 metrics:nil views:views];
+    NSArray *verticalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(5)-[_cellImage(40)]-(5)-|" options:0 metrics:nil views:views];
     
     [self addConstraints:horizontalConstraints];
     [self addConstraints:verticalConstraints];
