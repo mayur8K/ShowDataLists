@@ -62,9 +62,8 @@
 // MARK: Private Methods
 - (void)setupTableView
 {
-    self.tableView.estimatedRowHeight = 300;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-  
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     refreshControl = [[UIRefreshControl alloc] init];
     refreshControl.backgroundColor = [UIColor clearColor];
     refreshControl.tintColor = [UIColor blackColor];
