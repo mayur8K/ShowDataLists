@@ -20,6 +20,7 @@
 
 @implementation DataManager
 
+//Get data from server. exposed API To UI
 - (void)getServerData
 {
     _serviceObj = [[CommunicationService alloc] init];
@@ -27,6 +28,8 @@
     [_serviceObj loadServerDataWithUrl:urlstring];
 }
 
+//MARK:Notification handler
+//Send data to UI through notification.. do dependancy on UI.. not strongly binded.
 - (void)sendDataItems:(NSMutableDictionary *)dictionary
 {
     dispatch_async(dispatch_get_main_queue(), ^{

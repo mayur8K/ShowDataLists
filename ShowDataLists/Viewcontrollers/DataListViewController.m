@@ -170,7 +170,7 @@
     
     return totalHeight;
 }
-
+// Calculate cell height based on description and title
 - (CGFloat)calculateHeightWith:(NSString *)textstr
 {
     NSString *text = textstr;

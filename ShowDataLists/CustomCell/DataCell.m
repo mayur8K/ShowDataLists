@@ -31,6 +31,7 @@
 }
 
 // MARK: Private Methods
+// Set up ui for autolayout
 - (void)setupViews
 {
     _cellImage = [[UIImageView alloc] init];
